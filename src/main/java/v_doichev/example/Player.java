@@ -6,15 +6,15 @@ import java.util.ArrayList;
 
 public class Player {
     private final String name;
-    private final MarineField ownField;
-    private final MarineField opponentField;
+    private final SeaField ownField;
+    private final SeaField opponentField;
     public ArrayList<Ship> ships = new ArrayList<>();
 
     public Player(String name) {
 
         this.name = name;
-        this.ownField = new MarineField();
-        this.opponentField = new MarineField();
+        this.ownField = new SeaField();
+        this.opponentField = new SeaField();
 
         for (int i = 0; i < SingleDeck.getCount(); i++) {
             this.ships.add(new SingleDeck());
@@ -34,11 +34,11 @@ public class Player {
         return name;
     }
 
-    public MarineField getOwnField() {
+    public SeaField getOwnField() {
         return ownField;
     }
 
-    public MarineField getOpponentField() {
+    public SeaField getOpponentField() {
         return opponentField;
     }
 

@@ -1,5 +1,7 @@
 package v_doichev.example.Ships;
-
+/**
+ * Трипалубний корабель
+ */
 public class ThreeDeck extends Ship {
     private static final int count = 2;
     public static int getCount() {

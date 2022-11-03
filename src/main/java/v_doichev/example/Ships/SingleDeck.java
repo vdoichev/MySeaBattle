@@ -1,5 +1,8 @@
 package v_doichev.example.Ships;
 
+/**
+ * Однопалубний корабель
+ */
 public class SingleDeck extends Ship {
     public SingleDeck() {
         super(1);

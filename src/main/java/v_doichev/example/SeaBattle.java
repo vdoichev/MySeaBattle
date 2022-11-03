@@ -1,6 +1,7 @@
 package v_doichev.example;
 
 import v_doichev.example.Ships.Ship;
+
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -17,8 +18,9 @@ public class SeaBattle {
 
     /**
      * Додавання кораблів гравця до ігрового поля
-     * @param player - гравець
-     * @param scanner - пристрій вводу данних
+     *
+     * @param player  - гравець
+     * @param scanner - пристрій вводу даних
      */
     private static void AddShipsForPlayer(Player player, Scanner scanner) {
         System.out.println("Почнемо розкладати кораблі на полі гравця " + player.getName() +
@@ -36,9 +38,10 @@ public class SeaBattle {
 
     /**
      * Зчитування координат корабля з пристрою вводу
-     * @param scanner - пристрій вводу данних
-     * @param ship - корабель гравця
-     * @return - true, якщо успішно додані коордінати корабля
+     *
+     * @param scanner - пристрій вводу даних
+     * @param ship    - корабель гравця
+     * @return - true, якщо успішно додані координати корабля
      */
     private static boolean readCoordinatesForShip(Scanner scanner, Ship ship) {
         boolean result = false;
@@ -53,26 +56,31 @@ public class SeaBattle {
                     int y = Integer.parseInt(cellCoordinates[1]);
                     if (x >= 0 && x < 10 && y >= 0 && y < 10) {
                         ship.addCell(i, x, y);
-                        result = true;
                     } else System.out.println("Не вірно вказані координати! " +
                             "Допустимий діапазон числа: 0-9");
-                } else System.out.println("Не вірно вказані коордінати!");
+                } else System.out.println("Не вірно вказані координати!");
             }
-        } else System.out.println("Не вірно вказані коордінати! " +
+            result = ship.isCheckShip();
+            if (!result) {
+                System.out.println("Не вірно вказані координати! " +
+                        "Клітинки мають бути розташовані поряд по горизонталі або вертикалі!");
+            }
+        } else System.out.println("Не вірно вказані координати! " +
                 "Не відповідність розміру корабля");
         return result;
     }
 
     /**
      * Додаємо гравців до гри
+     *
      * @param scanner - через командну строку
      * @return - повертаємо чергу з двох гравців
      */
     private static Deque<Player> addPlayersToGame(Scanner scanner) {
         Deque<Player> players = new LinkedList<>();
-        System.out.println("Введіть і'мя першого гравця:");
+        System.out.println("Введіть ім'я першого гравця:");
         players.addFirst(new Player(scanner.nextLine()));
-        System.out.println("Введіть і'мя другого гравця:");
+        System.out.println("Введіть ім'я другого гравця:");
         players.addLast(new Player(scanner.nextLine()));
         return players;
     }

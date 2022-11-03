@@ -1,5 +1,7 @@
 package v_doichev.example.Ships;
-
+/**
+ * Двопалубний корабель
+ */
 public class DoubleDeck extends Ship {
     private static final int count = 3;
 

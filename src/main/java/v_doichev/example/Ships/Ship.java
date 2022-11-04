@@ -56,6 +56,21 @@ public abstract class Ship {
     }
 
     /**
+     * Перевірка підбиття корабля
+     * @return true якщо всі клітинки корабля підбиті
+     */
+    public boolean isWreckedShip() {
+        boolean result = true;
+        for (MarineCell cell : this.shipCell) {
+            if (cell.getCell() != Cell.WRECKED_SHIP) {
+                result = false;
+                break;
+            }
+        }
+        return !result;
+    }
+
+    /**
      * Перевірка на коректність координат корабля (клітинки поряд по горизонталі або вертикалі)
      * @return true якщо клітинки корабля знаходяться поруч
      */

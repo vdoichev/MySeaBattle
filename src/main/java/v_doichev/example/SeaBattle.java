@@ -1,7 +1,5 @@
 package v_doichev.example;
 
-import v_doichev.example.Ships.Ship;
-
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -11,68 +9,43 @@ public class SeaBattle {
         System.out.println("---------------Вітаємо у грі \"Морський бій\"---------------");
         Scanner scanner = new Scanner(System.in);
         Deque<Player> players = addPlayersToGame(scanner);
-        for (Player player : players) {
-            AddShipsForPlayer(player, scanner);
-        }
-    }
-
-    /**
-     * Додавання кораблів гравця до ігрового поля
-     *
-     * @param player  - гравець
-     * @param scanner - пристрій вводу даних
-     */
-    private static void AddShipsForPlayer(Player player, Scanner scanner) {
-        System.out.println("Почнемо розкладати кораблі на полі гравця " + player.getName() +
-                "! Інший гравець не дивиться!");
-        player.getOwnField().print();
-        for (Ship ship : player.ships) {
-            boolean isAddNewShip;
+        players.getFirst().addShipsForPlayer(scanner);
+        players.getLast().addShipsForPlayer(scanner);
+        System.out.println("-----------------------Гра починається----------------------");
+        boolean isGameOver = false;
+        battle:
+        do {
+            boolean isHit;
             do {
-                isAddNewShip = readCoordinatesForShip(scanner, ship, player.getOwnField());
-            } while (!isAddNewShip);
-            player.refreshOwnMarineBoard();
-            player.getOwnField().print();
-        }
-    }
+                System.out.println("Наступний хід робить гравець " +
+                        players.getFirst().getName());
+                isHit = players.getFirst().nextShot(players.getLast(), scanner);
+                if (isHit) {
+                    System.out.println("Влучив!");
+                    isGameOver = players.getLast().isLoser();
+                    if (isGameOver) {
+                        System.out.println("Кінець гри! Переможець гравець " +
+                                players.getFirst().getName());
+                        break battle;
+                    }
+                } else System.out.println("Промах!");
+            } while (isHit);
 
-    /**
-     * Зчитування координат корабля з пристрою вводу
-     *
-     * @param scanner - пристрій вводу даних
-     * @param ship    - корабель гравця
-     * @return - true, якщо успішно додані координати корабля
-     */
-    private static boolean readCoordinatesForShip(Scanner scanner, Ship ship, SeaField field) {
-        boolean result = false;
-        System.out.println("Введи координати " + ship.getSizeStr() +
-                " корабля (формат: " + ship.getFormat() + ")");
-        String[] shipCoordinates = scanner.nextLine().split(";");
-        if (shipCoordinates.length == ship.getSize()) {
-            for (int i = 0; i < shipCoordinates.length; i++) {
-                String[] cellCoordinates = shipCoordinates[i].split(",");
-                if (cellCoordinates.length == 2) {
-                    int x = Integer.parseInt(cellCoordinates[0]);
-                    int y = Integer.parseInt(cellCoordinates[1]);
-                    if (x >= 0 && x < 10 && y >= 0 && y < 10) {
-                        ship.addCell(i, x, y);
-                    } else System.out.println("Не вірно вказані координати! " +
-                            "Допустимий діапазон числа: 0-9");
-                } else System.out.println("Не вірно вказані координати!");
-            }
-            result = ship.isCheckShip();
-            if (!result) {
-                System.out.println("Не вірно вказані координати! " +
-                        "Клітинки мають бути розташовані поряд по горизонталі або вертикалі!");
-            }
-            result = !field.isConflictOtherShip(ship);
-            if (!result) {
-                System.out.println("Не вірно вказані координати! " +
-                        "Клітинки вже зайняті іншим кораблем!");
-            }
-        } else System.out.println("Не вірно вказані координати! " +
-                "Не відповідність розміру корабля");
-        return result;
+            do {
+                System.out.println("Наступний хід робить гравець " +
+                        players.getLast().getName());
+                isHit = players.getLast().nextShot(players.getFirst(), scanner);
+                if (isHit) {
+                    System.out.println("Влучив!");
+                    isGameOver = players.getFirst().isLoser();
+                    if (isGameOver) {
+                        System.out.println("Кінець гри! Переможець гравець " +
+                                players.getLast().getName());
+                        break battle;
+                    }
+                } else System.out.println("Промах!");
+            } while (!isHit);
+        } while (isGameOver);
     }
 
     /**

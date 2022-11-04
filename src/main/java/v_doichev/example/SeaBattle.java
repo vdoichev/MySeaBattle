@@ -44,8 +44,8 @@ public class SeaBattle {
                         break battle;
                     }
                 } else System.out.println("Промах!");
-            } while (!isHit);
-        } while (isGameOver);
+            } while (isHit);
+        } while (!isGameOver);
     }
 
     /**

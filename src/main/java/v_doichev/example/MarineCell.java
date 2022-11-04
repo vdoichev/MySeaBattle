@@ -1,7 +1,7 @@
 package v_doichev.example;
 
 public class MarineCell {
-    private final Cell cell;
+    private Cell cell;
     private final int x;
     private final int y;
 
@@ -18,6 +18,10 @@ public class MarineCell {
 
     public Cell getCell() {
         return cell;
+    }
+
+    public void setCell(Cell cell) {
+        this.cell = cell;
     }
 
     public int getX() {

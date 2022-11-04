@@ -36,10 +36,6 @@ public abstract class Ship {
                 '}';
     }
 
-    public MarineCell[] getShipCell() {
-        return shipCell;
-    }
-
     /**
      * Перевірка корабля на відсутність зображення
      * @return true якщо хоч одна клітинка null, або Cell.EMPTY
@@ -67,7 +63,7 @@ public abstract class Ship {
                 break;
             }
         }
-        return !result;
+        return result;
     }
 
     /**

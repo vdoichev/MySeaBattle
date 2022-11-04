@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e07c6aa-d230-4a7d-9540-060411d9c426" name="Changes" comment="Add method isConflictOtherShip to class SeaField and output HALO in metod refreshOwnMarineBoard">
+    <list default="true" id="4e07c6aa-d230-4a7d-9540-060411d9c426" name="Changes" comment="Add methods nextShot, isLoser and game progress logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/MarineCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/MarineCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/SeaBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/SeaBattle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/Ships/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/Ships/Ship.java" afterDir="false" />
@@ -117,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667567110397</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add methods nextShot, isLoser and game progress logic">
+      <created>1667598019001</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667598019002</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +144,23 @@
     <MESSAGE value="Add README.md" />
     <MESSAGE value="Add method isCheckShip to class Ship" />
     <MESSAGE value="Add method isConflictOtherShip to class SeaField and output HALO in metod refreshOwnMarineBoard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add method isConflictOtherShip to class SeaField and output HALO in metod refreshOwnMarineBoard" />
+    <MESSAGE value="Add methods nextShot, isLoser and game progress logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add methods nextShot, isLoser and game progress logic" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/v_doichev/example/SeaBattle.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/v_doichev/example/Player.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

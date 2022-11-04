@@ -39,10 +39,6 @@ public class Player {
         return ownField;
     }
 
-    public SeaField getOpponentField() {
-        return opponentField;
-    }
-
     /**
      * Оновлення поля гравця з урахуванням розміщених кораблів
      */
@@ -157,7 +153,11 @@ public class Player {
             int x = Integer.parseInt(fireCell[0]);
             int y = Integer.parseInt(fireCell[1]);
             if (x >= 0 && x < 10 && y >= 0 && y < 10) {
-                result = (opponent.ownField.cells[x][y].getCell() == Cell.WHOLE_SHIP);
+                if (opponent.ownField.cells[x][y].getCell() == Cell.WHOLE_SHIP){
+                    opponent.ownField.cells[x][y].setCell(Cell.WRECKED_SHIP);
+                    opponent.getOwnField().print();
+                    result = true;
+                }
             } else System.out.println("Не вірно вказані координати! " +
                     "Допустимий діапазон числа: 0-9");
         } else System.out.println("Не вірно вказані координати! " +

@@ -24,12 +24,12 @@ public class SeaBattle {
      */
     private static void AddShipsForPlayer(Player player, Scanner scanner) {
         System.out.println("Почнемо розкладати кораблі на полі гравця " + player.getName() +
-                "! Іншій гравець не дивиться!");
+                "! Інший гравець не дивиться!");
         player.getOwnField().print();
         for (Ship ship : player.ships) {
             boolean isAddNewShip;
             do {
-                isAddNewShip = readCoordinatesForShip(scanner, ship);
+                isAddNewShip = readCoordinatesForShip(scanner, ship, player.getOwnField());
             } while (!isAddNewShip);
             player.refreshOwnMarineBoard();
             player.getOwnField().print();
@@ -43,7 +43,7 @@ public class SeaBattle {
      * @param ship    - корабель гравця
      * @return - true, якщо успішно додані координати корабля
      */
-    private static boolean readCoordinatesForShip(Scanner scanner, Ship ship) {
+    private static boolean readCoordinatesForShip(Scanner scanner, Ship ship, SeaField field) {
         boolean result = false;
         System.out.println("Введи координати " + ship.getSizeStr() +
                 " корабля (формат: " + ship.getFormat() + ")");
@@ -64,6 +64,11 @@ public class SeaBattle {
             if (!result) {
                 System.out.println("Не вірно вказані координати! " +
                         "Клітинки мають бути розташовані поряд по горизонталі або вертикалі!");
+            }
+            result = !field.isConflictOtherShip(ship);
+            if (!result) {
+                System.out.println("Не вірно вказані координати! " +
+                        "Клітинки вже зайняті іншим кораблем!");
             }
         } else System.out.println("Не вірно вказані координати! " +
                 "Не відповідність розміру корабля");

@@ -46,12 +46,29 @@ public class Player {
      * Оновлення поля гравця з урахуванням розміщених кораблів
      */
     public void refreshOwnMarineBoard() {
-        for (Ship ship: this.ships) {
-            if (!ship.isEmptyShip()) {
+        for (Ship ship : this.ships) {
+            if (ship.isEmptyShip()) {
                 for (int j = 0; j < ship.getSize(); j++) {
                     int x = ship.shipCell[j].getX();
                     int y = ship.shipCell[j].getY();
                     this.ownField.cells[x][y] = ship.shipCell[j];
+
+                    if (x - 1 >= 0 && this.ownField.cells[x - 1][y].getCell() == Cell.EMPTY)
+                        this.ownField.cells[x - 1][y] = new MarineCell(Cell.HALO, x - 1, y);
+                    if (x + 1 < 10 && this.ownField.cells[x + 1][y].getCell() == Cell.EMPTY)
+                        this.ownField.cells[x + 1][y] = new MarineCell(Cell.HALO, x + 1, y);
+                    if (y - 1 >= 0 && this.ownField.cells[x][y - 1].getCell() == Cell.EMPTY)
+                        this.ownField.cells[x][y - 1] = new MarineCell(Cell.HALO, x, y - 1);
+                    if (y + 1 < 10 && this.ownField.cells[x][y + 1].getCell() == Cell.EMPTY)
+                        this.ownField.cells[x][y + 1] = new MarineCell(Cell.HALO, x, y + 1);
+                    if (x - 1 >= 0 && y - 1 >= 0 && this.ownField.cells[x - 1][y - 1].getCell() == Cell.EMPTY)
+                        this.ownField.cells[x - 1][y - 1] = new MarineCell(Cell.HALO, x - 1, y - 1);
+                    if (x + 1 < 10 && y + 1 < 10 && this.ownField.cells[x + 1][y + 1].getCell() == Cell.EMPTY)
+                        this.ownField.cells[x + 1][y + 1] = new MarineCell(Cell.HALO, x + 1, y + 1);
+                    if (x - 1 >= 0 && y + 1 < 10 && this.ownField.cells[x - 1][y + 1].getCell() == Cell.EMPTY)
+                        this.ownField.cells[x - 1][y + 1] = new MarineCell(Cell.HALO, x - 1, y + 1);
+                    if (x + 1 < 10 && y - 1 > 0 && this.ownField.cells[x + 1][y - 1].getCell() == Cell.EMPTY)
+                        this.ownField.cells[x + 1][y - 1] = new MarineCell(Cell.HALO, x + 1, y - 1);
                 }
             }
         }

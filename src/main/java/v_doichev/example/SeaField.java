@@ -1,5 +1,7 @@
 package v_doichev.example;
 
+import v_doichev.example.Ships.Ship;
+
 public class SeaField {
 
     public final MarineCell[][] cells;
@@ -14,6 +16,9 @@ public class SeaField {
         }
     }
 
+    /**
+     * Вивід на екран морського поля
+     */
     public void print() {
         System.out.println("   0  1  2  3  4  5  6  7  8  9");
         int count = 0;
@@ -30,5 +35,23 @@ public class SeaField {
 
     public MarineCell[][] getCells() {
         return cells;
+    }
+
+    /**
+     * Перевірка координат корабля з координатами поля на наявність вже іншого корабля
+     * @param ship - корабель
+     * @return true якщо є конфлікт з іншим кораблем або ореолом корабля
+     */
+    public boolean isConflictOtherShip(Ship ship){
+        boolean result = false;
+        for (int j = 0; j < ship.getSize(); j++) {
+            int x = ship.shipCell[j].getX();
+            int y = ship.shipCell[j].getY();
+            if (this.cells[x][y].getCell()!=Cell.EMPTY){
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
 }

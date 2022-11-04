@@ -40,6 +40,10 @@ public abstract class Ship {
         return shipCell;
     }
 
+    /**
+     * Перевірка корабля на відсутність зображення
+     * @return true якщо хоч одна клітинка null, або Cell.EMPTY
+     */
     public boolean isEmptyShip() {
         boolean result = false;
         for (MarineCell cell : this.shipCell) {
@@ -48,16 +52,16 @@ public abstract class Ship {
                 break;
             }
         }
-        return result;
+        return !result;
     }
 
     /**
      * Перевірка на коректність координат корабля (клітинки поряд по горизонталі або вертикалі)
-     * @return
+     * @return true якщо клітинки корабля знаходяться поруч
      */
     public boolean isCheckShip() {
         boolean result = false;
-        if (!this.isEmptyShip()) {
+        if (this.isEmptyShip()) {
             int xFirst = this.shipCell[0].getX();
             int yFirst = this.shipCell[0].getY();
             int xLast = this.shipCell[this.shipCell.length - 1].getX();

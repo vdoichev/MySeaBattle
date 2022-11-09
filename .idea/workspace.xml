@@ -9,10 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e07c6aa-d230-4a7d-9540-060411d9c426" name="Changes" comment="Correct methods nextShot, isLoser and game progress logic">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/v_doichev/example/CellTest.java" afterDir="false" />
+    <list default="true" id="4e07c6aa-d230-4a7d-9540-060411d9c426" name="Changes" comment="Add tests for class Cell">
+      <change afterPath="$PROJECT_DIR$/src/test/java/v_doichev/example/Ships/ShipTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/SeaBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/SeaBattle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/Ships/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/Ships/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/v_doichev/example/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/v_doichev/example/CellTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,28 +43,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last.edited.regexp": "Sample Text",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "proofread"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last.edited.regexp&quot;: &quot;Sample Text&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Aspose" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CellTest">
+  <component name="RunManager" selected="JUnit.All in MySeaBattle">
     <configuration name="SeaBattle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="v_doichev.example.SeaBattle" />
       <module name="MySeaBattle" />
@@ -83,7 +86,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstTags" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="MySeaBattle" />
       <extension name="coverage">
         <pattern>
@@ -93,15 +96,57 @@
       </extension>
       <option name="PACKAGE_NAME" value="v_doichev.example" />
       <option name="MAIN_CLASS_NAME" value="v_doichev.example.CellTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="tags" />
+      <tag value="first" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShipTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MySeaBattle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="v_doichev.example.Ships.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="v_doichev.example.Ships" />
+      <option name="MAIN_CLASS_NAME" value="v_doichev.example.Ships.ShipTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShipTest.InCorrectIndexForCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MySeaBattle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="v_doichev.example.Ships.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="v_doichev.example.Ships" />
+      <option name="MAIN_CLASS_NAME" value="v_doichev.example.Ships.ShipTest" />
+      <option name="METHOD_NAME" value="InCorrectIndexForCell" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.SeaBattle" />
+      <item itemvalue="JUnit.ShipTest" />
+      <item itemvalue="JUnit.ShipTest.InCorrectIndexForCell" />
+      <item itemvalue="JUnit.All in MySeaBattle" />
+      <item itemvalue="JUnit.FirstTags" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CellTest" />
         <item itemvalue="JUnit.All in MySeaBattle" />
+        <item itemvalue="JUnit.ShipTest.InCorrectIndexForCell" />
+        <item itemvalue="JUnit.ShipTest" />
+        <item itemvalue="JUnit.FirstTags" />
         <item itemvalue="Application.SeaBattle" />
       </list>
     </recent_temporary>
@@ -171,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667600323947</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add tests for class Cell">
+      <created>1667907402755</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667907402755</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,7 +244,8 @@
     <MESSAGE value="Add method isConflictOtherShip to class SeaField and output HALO in metod refreshOwnMarineBoard" />
     <MESSAGE value="Add methods nextShot, isLoser and game progress logic" />
     <MESSAGE value="Correct methods nextShot, isLoser and game progress logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct methods nextShot, isLoser and game progress logic" />
+    <MESSAGE value="Add tests for class Cell" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests for class Cell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -202,6 +255,11 @@
           <line>98</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/v_doichev/example/Ships/ShipTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -210,5 +268,8 @@
       <FILTER>v_doichev.example.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/MySeaBattle$All_in_MySeaBattle.ic" NAME="All in MySeaBattle Coverage Results" MODIFIED="1667906531945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/MySeaBattle$ShipTest.ic" NAME="ShipTest Coverage Results" MODIFIED="1668014223739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>v_doichev.example.Ships.*</FILTER>
+    </SUITE>
   </component>
 </project>

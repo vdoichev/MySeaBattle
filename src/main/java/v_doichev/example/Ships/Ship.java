@@ -16,8 +16,12 @@ public abstract class Ship {
         this.shipCell = new MarineCell[this.size];
     }
 
-    public void addCell(int i, int x, int y) {
-        shipCell[i] = new MarineCell(Cell.WHOLE_SHIP, x, y);
+    public void addCell(int i, int x, int y) throws Exception {
+        if (i < 0 || i >= shipCell.length) {
+            throw new Exception("Вихід за розміри масиву!");
+        } else {
+            shipCell[i] = new MarineCell(Cell.WHOLE_SHIP, x, y);
+        }
     }
 
     public int getSize() {
@@ -38,6 +42,7 @@ public abstract class Ship {
 
     /**
      * Перевірка корабля на відсутність зображення
+     *
      * @return true якщо хоч одна клітинка null, або Cell.EMPTY
      */
     public boolean isEmptyShip() {
@@ -53,6 +58,7 @@ public abstract class Ship {
 
     /**
      * Перевірка підбиття корабля
+     *
      * @return true якщо всі клітинки корабля підбиті
      */
     public boolean isWreckedShip() {
@@ -68,6 +74,7 @@ public abstract class Ship {
 
     /**
      * Перевірка на коректність координат корабля (клітинки поряд по горизонталі або вертикалі)
+     *
      * @return true якщо клітинки корабля знаходяться поруч
      */
     public boolean isCheckShip() {

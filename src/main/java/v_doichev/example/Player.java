@@ -76,7 +76,7 @@ public class Player {
      *
      * @param scanner - пристрій вводу даних
      */
-    public void addShipsForPlayer(Scanner scanner) {
+    public void addShipsForPlayer(Scanner scanner) throws Exception {
         System.out.println("Почнемо розкладати кораблі на полі гравця " + this.getName() +
                 "! Інший гравець не дивиться!");
         this.getOwnField().print();
@@ -112,7 +112,7 @@ public class Player {
      * @param ship    - корабель гравця
      * @return - true, якщо успішно додані координати корабля
      */
-    public boolean readCoordinatesForShip(Scanner scanner, Ship ship) {
+    public boolean readCoordinatesForShip(Scanner scanner, Ship ship) throws Exception {
         boolean result = false;
         System.out.println("Введи координати " + ship.getSizeStr() +
                 " корабля (формат: " + ship.getFormat() + ")");

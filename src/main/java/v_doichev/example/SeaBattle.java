@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class SeaBattle {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("---------------Вітаємо у грі \"Морський бій\"---------------");
         Scanner scanner = new Scanner(System.in);
         Deque<Player> players = addPlayersToGame(scanner);

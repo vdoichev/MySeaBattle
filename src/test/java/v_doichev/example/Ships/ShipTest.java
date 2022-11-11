@@ -14,7 +14,7 @@ public class ShipTest {
     @BeforeEach
     void prepaire() throws Exception {
         singleDeckShip = new SingleDeck();
-        singleDeckShip.addCell(0, 0, 0,Cell.EMPTY);
+        singleDeckShip.addCell(0, 0, 0, Cell.EMPTY);
         singleDeckShip2 = new SingleDeck();
     }
 
@@ -35,46 +35,46 @@ public class ShipTest {
 
     @Test
     @DisplayName("Не вірно вказаний індекс масиву клітинки у корабля")
-    void InCorrectIndexForCell(){
+    void InCorrectIndexForCell() {
         try {
             singleDeckShip.addCell(-1, 1, 1, Cell.WHOLE_SHIP);
             fail();
-        }catch (Exception e){
-            assertEquals("Вихід за розміри масиву!",e.getMessage(),e.getMessage());
+        } catch (Exception e) {
+            assertEquals("Вихід за розміри масиву!", e.getMessage(), e.getMessage());
         }
     }
 
     @Test
     @DisplayName("Перевірка що корабель не вказаний")
-    void CheckForEmptyShip(){
+    void CheckForEmptyShip() {
         try {
-            singleDeckShip.addCell(0,1,1,Cell.EMPTY);
+            singleDeckShip.addCell(0, 1, 1, Cell.EMPTY);
             assertTrue(singleDeckShip.isEmptyShip());
         } catch (Exception e) {
-            assertEquals("Вихід за розміри масиву!",e.getMessage(),e.getMessage());
+            assertEquals("Вихід за розміри масиву!", e.getMessage(), e.getMessage());
         }
     }
 
     @Test
     @DisplayName("Перевірка що корабель підбитий")
-    void CheckForWreckedShip(){
+    void CheckForWreckedShip() {
         try {
-            singleDeckShip.addCell(0,1,1,Cell.WRECKED_SHIP);
+            singleDeckShip.addCell(0, 1, 1, Cell.WRECKED_SHIP);
             assertTrue(singleDeckShip.isWreckedShip());
         } catch (Exception e) {
-            assertEquals("Вихід за розміри масиву!",e.getMessage(),e.getMessage());
+            assertEquals("Вихід за розміри масиву!", e.getMessage(), e.getMessage());
         }
     }
 
     @Test
     @DisplayName("Перевірка щою клітинка не була зайнята іншим кораблем")
-    void CheckForCheckShip(){
+    void CheckForCheckShip() {
         try {
-            singleDeckShip.addCell(0,1,1,Cell.WHOLE_SHIP);
-            singleDeckShip2.addCell(0,1,1,Cell.WHOLE_SHIP);
+            singleDeckShip.addCell(0, 1, 1, Cell.WHOLE_SHIP);
+            singleDeckShip2.addCell(0, 1, 1, Cell.WHOLE_SHIP);
             assertTrue(singleDeckShip2.isCheckShip());
         } catch (Exception e) {
-            assertEquals("Вихід за розміри масиву!",e.getMessage(),e.getMessage());
+            assertEquals("Вихід за розміри масиву!", e.getMessage(), e.getMessage());
         }
     }
 }

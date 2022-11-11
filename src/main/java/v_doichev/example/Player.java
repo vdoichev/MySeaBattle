@@ -18,7 +18,7 @@ public class Player {
         for (int i = 0; i < SingleDeck.getCount(); i++) {
             this.ships.add(new SingleDeck());
         }
-        /*for (int i = 0; i < DoubleDeck.getCount(); i++) {
+        for (int i = 0; i < DoubleDeck.getCount(); i++) {
             this.ships.add(new DoubleDeck());
         }
         for (int i = 0; i < ThreeDeck.getCount(); i++) {
@@ -26,7 +26,7 @@ public class Player {
         }
         for (int i = 0; i < FourDeck.getCount(); i++) {
             this.ships.add(new FourDeck());
-        }*/
+        }
     }
 
     public String getName() {

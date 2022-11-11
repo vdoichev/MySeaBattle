@@ -1,8 +1,7 @@
 package v_doichev.example.Ships;
 
 import org.junit.jupiter.api.*;
-
-import java.util.Arrays;
+import v_doichev.example.Cell;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,11 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Тестування кораблів")
 public class ShipTest {
     private Ship singleDeckShip;
+    private Ship singleDeckShip2;
 
     @BeforeEach
     void prepaire() throws Exception {
         singleDeckShip = new SingleDeck();
-        singleDeckShip.addCell(0, 0, 0);
+        singleDeckShip.addCell(0, 0, 0,Cell.EMPTY);
+        singleDeckShip2 = new SingleDeck();
     }
 
 
@@ -36,9 +37,43 @@ public class ShipTest {
     @DisplayName("Не вірно вказаний індекс масиву клітинки у корабля")
     void InCorrectIndexForCell(){
         try {
-            singleDeckShip.addCell(-1, 1, 1);
-            assertTrue(false);
+            singleDeckShip.addCell(-1, 1, 1, Cell.WHOLE_SHIP);
+            fail();
         }catch (Exception e){
+            assertEquals("Вихід за розміри масиву!",e.getMessage(),e.getMessage());
+        }
+    }
+
+    @Test
+    @DisplayName("Перевірка що корабель не вказаний")
+    void CheckForEmptyShip(){
+        try {
+            singleDeckShip.addCell(0,1,1,Cell.EMPTY);
+            assertTrue(singleDeckShip.isEmptyShip());
+        } catch (Exception e) {
+            assertEquals("Вихід за розміри масиву!",e.getMessage(),e.getMessage());
+        }
+    }
+
+    @Test
+    @DisplayName("Перевірка що корабель підбитий")
+    void CheckForWreckedShip(){
+        try {
+            singleDeckShip.addCell(0,1,1,Cell.WRECKED_SHIP);
+            assertTrue(singleDeckShip.isWreckedShip());
+        } catch (Exception e) {
+            assertEquals("Вихід за розміри масиву!",e.getMessage(),e.getMessage());
+        }
+    }
+
+    @Test
+    @DisplayName("Перевірка щою клітинка не була зайнята іншим кораблем")
+    void CheckForCheckShip(){
+        try {
+            singleDeckShip.addCell(0,1,1,Cell.WHOLE_SHIP);
+            singleDeckShip2.addCell(0,1,1,Cell.WHOLE_SHIP);
+            assertTrue(singleDeckShip2.isCheckShip());
+        } catch (Exception e) {
             assertEquals("Вихід за розміри масиву!",e.getMessage(),e.getMessage());
         }
     }

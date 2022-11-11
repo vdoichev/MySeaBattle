@@ -16,11 +16,11 @@ public abstract class Ship {
         this.shipCell = new MarineCell[this.size];
     }
 
-    public void addCell(int i, int x, int y) throws Exception {
+    public void addCell(int i, int x, int y, Cell cell) throws Exception {
         if (i < 0 || i >= shipCell.length) {
             throw new Exception("Вихід за розміри масиву!");
         } else {
-            shipCell[i] = new MarineCell(Cell.WHOLE_SHIP, x, y);
+            shipCell[i] = new MarineCell(cell, x, y);
         }
     }
 
@@ -53,7 +53,7 @@ public abstract class Ship {
                 break;
             }
         }
-        return !result;
+        return result;
     }
 
     /**
@@ -79,7 +79,7 @@ public abstract class Ship {
      */
     public boolean isCheckShip() {
         boolean result = false;
-        if (this.isEmptyShip()) {
+        if (!this.isEmptyShip()) {
             int xFirst = this.shipCell[0].getX();
             int yFirst = this.shipCell[0].getY();
             int xLast = this.shipCell[this.shipCell.length - 1].getX();

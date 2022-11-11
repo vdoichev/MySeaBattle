@@ -8,14 +8,12 @@ import java.util.Scanner;
 public class Player {
     private final String name;
     private final SeaField ownField;
-    private final SeaField opponentField;
     public ArrayList<Ship> ships = new ArrayList<>();
 
     public Player(String name) {
 
         this.name = name;
         this.ownField = new SeaField();
-        this.opponentField = new SeaField();
 
         for (int i = 0; i < SingleDeck.getCount(); i++) {
             this.ships.add(new SingleDeck());
@@ -44,7 +42,7 @@ public class Player {
      */
     public void refreshOwnMarineBoard() {
         for (Ship ship : this.ships) {
-            if (ship.isEmptyShip()) {
+            if (!ship.isEmptyShip()) {
                 for (int j = 0; j < ship.getSize(); j++) {
                     int x = ship.shipCell[j].getX();
                     int y = ship.shipCell[j].getY();
@@ -124,7 +122,7 @@ public class Player {
                     int x = Integer.parseInt(cellCoordinates[0]);
                     int y = Integer.parseInt(cellCoordinates[1]);
                     if (x >= 0 && x < 10 && y >= 0 && y < 10) {
-                        ship.addCell(i, x, y);
+                        ship.addCell(i, x, y,Cell.WHOLE_SHIP);
                     } else System.out.println("Не вірно вказані координати! " +
                             "Допустимий діапазон числа: 0-9");
                 } else System.out.println("Не вірно вказані координати! " +

@@ -33,10 +33,6 @@ public class SeaField {
         }
     }
 
-    public MarineCell[][] getCells() {
-        return cells;
-    }
-
     /**
      * Перевірка координат корабля з координатами поля на наявність вже іншого корабля
      * @param ship - корабель

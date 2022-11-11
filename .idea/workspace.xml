@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e07c6aa-d230-4a7d-9540-060411d9c426" name="Changes" comment="Add tests for class Cell">
-      <change afterPath="$PROJECT_DIR$/src/test/java/v_doichev/example/Ships/ShipTest.java" afterDir="false" />
+    <list default="true" id="4e07c6aa-d230-4a7d-9540-060411d9c426" name="Changes" comment="Add tests for class Ship">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/SeaBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/SeaBattle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/SeaField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/SeaField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/v_doichev/example/Ships/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v_doichev/example/Ships/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/v_doichev/example/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/v_doichev/example/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/v_doichev/example/Ships/ShipTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/v_doichev/example/Ships/ShipTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,23 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstTags" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="MySeaBattle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="v_doichev.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="v_doichev.example" />
-      <option name="MAIN_CLASS_NAME" value="v_doichev.example.CellTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="tags" />
-      <tag value="first" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShipTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MySeaBattle" />
       <extension name="coverage">
@@ -114,6 +97,22 @@
       <option name="PACKAGE_NAME" value="v_doichev.example.Ships" />
       <option name="MAIN_CLASS_NAME" value="v_doichev.example.Ships.ShipTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShipTest.CheckForEmptyShip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MySeaBattle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="v_doichev.example.Ships.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="v_doichev.example.Ships" />
+      <option name="MAIN_CLASS_NAME" value="v_doichev.example.Ships.ShipTest" />
+      <option name="METHOD_NAME" value="CheckForEmptyShip" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,18 +135,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.SeaBattle" />
+      <item itemvalue="JUnit.ShipTest.CheckForEmptyShip" />
       <item itemvalue="JUnit.ShipTest" />
       <item itemvalue="JUnit.ShipTest.InCorrectIndexForCell" />
       <item itemvalue="JUnit.All in MySeaBattle" />
-      <item itemvalue="JUnit.FirstTags" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in MySeaBattle" />
-        <item itemvalue="JUnit.ShipTest.InCorrectIndexForCell" />
-        <item itemvalue="JUnit.ShipTest" />
-        <item itemvalue="JUnit.FirstTags" />
         <item itemvalue="Application.SeaBattle" />
+        <item itemvalue="JUnit.ShipTest" />
+        <item itemvalue="JUnit.ShipTest.CheckForEmptyShip" />
+        <item itemvalue="JUnit.ShipTest.InCorrectIndexForCell" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667907402755</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add tests for class Ship">
+      <created>1668017142838</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668017142838</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,20 +251,16 @@
     <MESSAGE value="Add methods nextShot, isLoser and game progress logic" />
     <MESSAGE value="Correct methods nextShot, isLoser and game progress logic" />
     <MESSAGE value="Add tests for class Cell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tests for class Cell" />
+    <MESSAGE value="Add tests for class Ship" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests for class Ship" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/v_doichev/example/Player.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/v_doichev/example/Ships/ShipTest.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="4" />
+          <line>54</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -267,9 +269,12 @@
     <SUITE FILE_PATH="coverage/MySeaBattle$CellTest.ic" NAME="CellTest Coverage Results" MODIFIED="1667907246608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>v_doichev.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/MySeaBattle$All_in_MySeaBattle.ic" NAME="All in MySeaBattle Coverage Results" MODIFIED="1667906531945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/MySeaBattle$ShipTest_InCorrectIndexForCell.ic" NAME="ShipTest.InCorrectIndexForCell Coverage Results" MODIFIED="1668017039137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>v_doichev.example.Ships.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/MySeaBattle$ShipTest.ic" NAME="ShipTest Coverage Results" MODIFIED="1668014223739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>v_doichev.example.Ships.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/MySeaBattle$All_in_MySeaBattle.ic" NAME="All in MySeaBattle Coverage Results" MODIFIED="1668200060929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
